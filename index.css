@@ -1,4 +1,4 @@
-#parent{
+#heading{
    /* color: rgba(21, 0, 255, 0.979);
    background-color: black; 
    justify-content: center;
@@ -7,16 +7,16 @@
    font-style: italic;
    border: 500px; */
 
-   width: 300px;
+   width: 800px;
    height: 400px;
-   color: blue;
-   background-color:black;
+   color: rgba(255, 64, 0, 0.853);
+   background-color:greenyellow;
    padding: 20px;
    font-family: 'Courier New', Courier, monospace;
    font-style: italic;
    border-radius: 10px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   text-align: center;
+   text-align:ce;
 }
 
 #child2{
