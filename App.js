@@ -1,43 +1,90 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
+import logo from './logo.png';
+import food from './food.png';
 
-const heading = React.createElement("h1", {id: "heading"}, 
-  "Namaste React"
-); // this is the core react, to simplify this more jsx was developed
-//this is not user(developer) friendly code or syntex because this is complex, not readable
-// To simplify this JSX comes into picture 
-const Jsxheading = ()=> (<h1 >Namaste React using JSX</h1>);
+/**
+ * Layout---------
+ * Header
+ *   logo
+ *   home, about us, contact us, cart
+ * Body
+ *   Search
+ *   Restaurent Container
+ *      Restaurent card
+ *        img
+ *        name, star rating, delivery time
+ * 
+ * 
+ * Footer
+ * 
+ */
+const Header = () =>{
+  return (
+    <div className="header">
+       <div className="logo-container">
+          <img className="logo"
+             src={logo} alt="SnackSprint Logo"
+          />
+       </div>
+       <div className="navitems">
 
-// React components
-// 1. Class based components  - old
-// 2. functional Components  - new
+         <ul>
+          <li>Home</li>
+          <li>about</li>
+          <li>contact us</li>
+          <li>cart</li>
+         </ul>
 
-//Functional Components :
-// it uses javascripts to create components
-// a function that returns JSX code
+       </div>
+    </div>
+  );
+}
 
-// const HeadingComponent = () =>{
-//   return <h1>Namaste React functional Component</h1>;
-// };
-const name = "Shubham Kumar";
-const HeadingComponent = () =>(
- 
-  <div id= "heading">
-   <Jsxheading/>
-   {Jsxheading()}
-   <Jsxheading></Jsxheading>
-   {/* all these three works same
-   <Jsxheading/>
-   {Jsxheading()}
-   <Jsxheading></Jsxheading>
-   */}
-   
-   <h2>{1000+500/2}</h2>
-   <h2>Hello {name}!</h2>
-   <h1 >Namaste React functional Component</h1>
-  </div>
-);
+const RestaurentCard = ()=>{
+  return (
+    <div className="res-card">
+      <img className= "card-img" src = {food}/>
+      <h3>Your Food</h3>
+      <div >
+        <h4>Burger</h4>
+        <h4>4.5 stars</h4>
+        <h4>35 minutes</h4>
+      </div>
+      
+    </div>
+  );
+}
+const Body = () =>{
+   return (
+    <div className="body">
+       <div className="search">
+           Search
+       </div>
+       <div className="res-container">
+          <RestaurentCard/>
+          <RestaurentCard/>
+          <RestaurentCard/>
+          <RestaurentCard/>
+          <RestaurentCard/>
+          <RestaurentCard/>
+          <RestaurentCard/>
+          <RestaurentCard/>
+          <RestaurentCard/>
+          <RestaurentCard/>
+       </div>
+    </div>
+   )
+}
+const AppLayout = () =>{
+ return (
+ <div className="app">
+   <Header/>
+   <Body/>
+ </div>
+ );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeadingComponent/>);
+root.render(<AppLayout/>);
